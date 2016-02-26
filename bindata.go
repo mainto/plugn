@@ -86,7 +86,7 @@ func bashenvBashBash() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "bashenv/bash.bash", size: 557, mode: os.FileMode(420), modTime: time.Unix(1450979371, 0)}
+	info := bindataFileInfo{name: "bashenv/bash.bash", size: 557, mode: os.FileMode(420), modTime: time.Unix(1456445639, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -106,7 +106,7 @@ func bashenvCmdBash() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "bashenv/cmd.bash", size: 1479, mode: os.FileMode(420), modTime: time.Unix(1450380776, 0)}
+	info := bindataFileInfo{name: "bashenv/cmd.bash", size: 1479, mode: os.FileMode(420), modTime: time.Unix(1456445639, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -126,7 +126,7 @@ func bashenvFnBash() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "bashenv/fn.bash", size: 547, mode: os.FileMode(420), modTime: time.Unix(1450380776, 0)}
+	info := bindataFileInfo{name: "bashenv/fn.bash", size: 547, mode: os.FileMode(420), modTime: time.Unix(1456445639, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
@@ -146,7 +146,7 @@ func bashenvPlugnBash() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindataFileInfo{name: "bashenv/plugn.bash", size: 3633, mode: os.FileMode(420), modTime: time.Unix(1450981185, 0)}
+	info := bindataFileInfo{name: "bashenv/plugn.bash", size: 3633, mode: os.FileMode(420), modTime: time.Unix(1456445639, 0)}
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }

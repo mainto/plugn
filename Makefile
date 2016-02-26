@@ -7,24 +7,13 @@ BUILD_TAG ?= dev
 build:
 	go-bindata bashenv
 	mkdir -p build/linux  && GOOS=linux  go build -a -ldflags "-X main.Version $(VERSION)" -o build/linux/$(NAME)
-	mkdir -p build/darwin && GOOS=darwin go build -a -ldflags "-X main.Version $(VERSION)" -o build/darwin/$(NAME)
-ifeq ($(CIRCLECI),true)
-	docker build -t $(IMAGE_NAME):$(BUILD_TAG) .
-else
-	docker build -f Dockerfile.dev -t $(IMAGE_NAME):$(BUILD_TAG) .
-endif
 
 deps:
-	go get -u github.com/jteeuwen/go-bindata/...
-	go get -u github.com/progrium/gh-release/...
-	go get -u github.com/progrium/basht/...
 	go get || true
 
 release: build
 	rm -rf release && mkdir release
 	tar -zcf release/$(NAME)_$(VERSION)_linux_$(HARDWARE).tgz -C build/linux $(NAME)
-	tar -zcf release/$(NAME)_$(VERSION)_darwin_$(HARDWARE).tgz -C build/darwin $(NAME)
-	gh-release create dokku/$(NAME) $(VERSION) $(shell git rev-parse --abbrev-ref HEAD)
 
 build-in-docker:
 	docker build --rm -f Dockerfile.build -t $(NAME)-build .
